@@ -49,7 +49,9 @@ O sistema permite cadastrar, listar, atualizar, deletar e buscar livros físicos
 
 ## 🛠️ Tecnologias Utilizadas
 
-- [TypeScript](https://www.typescriptlang.org/)
+- TypeScript
+- Node.js
+- Git 
 
 
 ---
