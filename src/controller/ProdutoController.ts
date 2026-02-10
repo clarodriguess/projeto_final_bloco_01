@@ -53,6 +53,18 @@ export class ProdutoController implements ProdutoRepository{
         }
     }
     
+    //teste case 6- buscar por genero
+   listarGeneros(genero?: string): string[] {
+    if (!genero) {
+        const generos = this.listaProdutos.map(produto => produto.genero);
+        return [...new Set(generos)];
+    }
+    const resultado = this.listaProdutos.filter(
+        produto => produto.genero.toLowerCase() === genero.toLowerCase()
+    );
+    resultado.forEach(produto => produto.visualizar());
+    return []; //retorna array
+}
 
 
     //gerar id automatico

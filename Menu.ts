@@ -39,6 +39,7 @@ export function main(){
         console.log("[3] CADASTRAR PRODUTO                    ")
         console.log("[4] ATUALIZAR PRODUTO                    ")
         console.log("[5] DELETAR PRODUTO                      ")
+        console.log("[6] BUSCAR POR GENERO                    ")
         console.log("[0] SAIR                                 ")
         console.log("                                         ")
         console.log("*****************************************")
@@ -81,6 +82,12 @@ export function main(){
                 deletarProduto()
                 keyPress()
                 break
+            case 6:
+                console.log(colors.fg.yellow,"\nBUSCAR POR GENERO", colors.reset)
+                 listarProdutoPorGenero();
+                keyPress();
+            break;
+
             default:
                 console.log("Opção inválida")
         }
@@ -229,6 +236,24 @@ function deletarProduto(): void{
     console.log("Digite o ID do produto que deseja deletar: ")
     const id = Input.questionInt("")
     produtos.deletar(id)
+}
+
+// teste case 6 - busca por genero
+function listarProdutoPorGenero(): void {
+    const generos = produtos.listarGeneros();
+    console.log("\nGeneros cadastrados:");
+    generos.forEach((genero, index) => {
+        console.log(`[${index + 1}] ${genero}`); //p opcao de escolha
+    });
+
+    console.log("\nEscolha o numero do genero:");
+    const opcao = Input.questionInt("");
+    const generoEscolhido = generos[opcao - 1];
+    if (!generoEscolhido) {
+        console.log(colors.fg.red, "\n*** Opção invalida ***", colors.reset);
+        return;
+    }
+    produtos.listarGeneros(generoEscolhido);
 }
 
 //funcao para exibir os dados do dev

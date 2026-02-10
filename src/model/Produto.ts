@@ -96,14 +96,14 @@ export abstract class Produto{
     }
 
      console.log("\n******************************");
-     console.log("             LIVRO             ");  
+     console.log("             PRODUTO            ");  
      console.log("******************************");  
      console.log(`ID: ${this._id}`);
      console.log(`TITULO: ${this._titulo}`);
      console.log(`AUTOR: ${this._autor}`);
      console.log(`EDITORA: ${this._editora}`);
      console.log(`GENERO: ${this._genero}`);
-     console.log(`TIPO DE LIVRO: ${tipo}`); //exibir a var tipo em vez do atributo 
+     console.log(`TIPO: ${tipo}`); //exibir a var tipo em vez do atributo 
      console.log(`PREÇO: R$ ${this._preco.toFixed(2)}`);
     }
 

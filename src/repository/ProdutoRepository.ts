@@ -8,4 +8,6 @@ export interface ProdutoRepository{
     cadastrar(produto: Produto): void;
     atualizar(produto: Produto): void;
     deletar(id: number): void;
+    listarGeneros(genero?: string): string[];
+
 }
