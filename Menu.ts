@@ -1,10 +1,19 @@
-import { colors } from "./util/Colors";
-import { Input } from "./util/Input";
+import { LivroDigital } from "./src/model/LivroDigital";
+import { LivroFisico } from "./src/model/LivroFisico";
+import { Produto } from "./src/model/Produto";
+import { colors } from "./src/util/Colors";
+import { Input } from "./src/util/Input";
 
 
 export function main(){
    
     let opcao:number;
+
+    //testes
+    const produto : LivroFisico = new LivroFisico(1,"Neuromancer", "William Gibson", "leia", "Sci-fi", 1, 50, 555,2)
+    const produto2 : LivroDigital = new LivroDigital(2, "Blade Runner", "Philip K. Dick", "nova", "Sci-fi", 2, 25, 50, "pdf")
+    produto.visualizar();
+    produto2.visualizar();
    
     while(true){
         console.log( colors.fg.yellow, 
@@ -85,5 +94,11 @@ function keyPress(): void {
     console.log("\nPressione enter para continuar...");
     Input.prompt();
 }
+
+
+//criar produtos para teste
+//contas.cadastrar(new ContaCorrente(contas.gerarNumero(), 1234, 'Amanda Magro', 1, 1000000.00, 100000.00));
+
+
 
 main()
