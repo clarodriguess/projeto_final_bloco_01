@@ -6,7 +6,7 @@ export abstract class Produto{
     private _autor: string;
     private _editora: string;
     private _genero: string;
-    private _tipo:number;
+    private _tipo: number;
     private _preco: number;
 
 
